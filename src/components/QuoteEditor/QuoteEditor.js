@@ -40,6 +40,7 @@ class QuoteEditor extends Component {
     render() {
         return (
             <div className="Quote-editor">
+                <span onClick={this.props.closeQuoteEditor} className="close-btn">✘</span>
                 <form
                     className="quote-editor-form"
                     ref={this.quoteFormRef}

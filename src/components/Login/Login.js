@@ -6,6 +6,11 @@ import './Login.css'
 
 class Login extends Component {
 
+    state = {
+        title: "Login",
+        message: "Sign-in to manage your quotes"
+    }
+
     static propTypes = {
         userId: React.PropTypes.string,
         authId: React.PropTypes.string,
@@ -26,7 +31,15 @@ class Login extends Component {
     }
 
     authHandler = (err, authData) => {
-        if(err) return console.error(err)
+        if(err) {
+            if(err.code === "auth/account-exists-with-different-credential") {
+                this.setState({
+                    title: "Error",
+                    message: `An account already exists with the email: ${err.email}`
+                })
+            }
+            return console.error(err)
+        }
 
         // login method from App component
         const login = this.props.login
@@ -44,7 +57,7 @@ class Login extends Component {
                 }
             })
             .then(snapshot => {
-                if(snapshot.val()) {
+                if(snapshot.val() && snapshot.val()[authData.user.uid]) {
                     login(snapshot.val()[authData.user.uid], authData.user.uid)
                 }
                 // if new user is created, another snapshot is required to get new data
@@ -59,13 +72,15 @@ class Login extends Component {
 
     render() {
         return (
-            <nav className="Login">
-                <h2>Login</h2>
-                <p>Sign-in to manage your quotes</p>
-                <button className="github" data-provider="github" onClick={this.authenticate}>Log In with GitHub</button>
-                <button className="facebook" data-provider="facebook" onClick={this.authenticate}>Log In with Facebook</button>
-                <button className="twitter" data-provider="twitter" onClick={this.authenticate}>Log In With Twitter</button>
-            </nav>
+            <div className="Login container">
+                <h2 className="login-title">{this.state.title}</h2>
+                <p className="login-message">{this.state.message}</p>
+                <div className="login-buttons">
+                    <button className="login-btn github" data-provider="github" onClick={this.authenticate}>GitHub Login</button>
+                    <button className="login-btn facebook" data-provider="facebook" onClick={this.authenticate}>Facebook Login</button>
+                    <button className="login-btn twitter" data-provider="twitter" onClick={this.authenticate}>Twitter Login</button>
+                </div>
+            </div>
         )
     }
 }

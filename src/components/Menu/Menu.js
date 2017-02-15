@@ -8,7 +8,7 @@ const Menu = ({ isMenuOpen, goToLoginPage, logout, isLoggedIn, toggleMenu }) => 
         <span onClick={toggleMenu} className="menu-item">Item 1</span>
         <span onClick={toggleMenu} className="menu-item">Item 2</span>
         <span onClick={toggleMenu} className="menu-item">Item 3</span>
-        <button
+        <span
             className="login-logout-btn"
             onClick={(isLoggedIn)
                 ? () => {toggleMenu(); logout()}
@@ -16,7 +16,7 @@ const Menu = ({ isMenuOpen, goToLoginPage, logout, isLoggedIn, toggleMenu }) => 
             }
         >
                 {(isLoggedIn) ? 'Logout' : 'Login'}
-        </button>
+        </span>
     </div>
 )
 

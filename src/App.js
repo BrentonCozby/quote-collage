@@ -16,6 +16,7 @@ import './App.css'
 class App extends Component {
     state = {
         userId: this.props.match.params.userId || null,
+        username: null,
         quotes: [],
         showLogin: false,
         isLoggedIn: false,
@@ -74,6 +75,7 @@ class App extends Component {
         this.setState({
             isLoggedIn: true,
             userId: authId,
+            username: userData.name,
             quotes: userData.quotes,
             showLogin: false
         })
@@ -87,7 +89,8 @@ class App extends Component {
             isLoggedIn: false,
             showLogin: false,
             quotes: defaultQuotes,
-            userId: null
+            userId: null,
+            username: null
         })
         this.props.push('/')
     }
@@ -157,6 +160,7 @@ class App extends Component {
                 quotes={this.state.quotes}
                 deleteQuote={this.deleteQuote}
                 openQuoteEditor={this.openQuoteEditor}
+                username={this.state.username}
             />
         )
     }

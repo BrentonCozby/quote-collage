@@ -1,37 +1,25 @@
+@import "../../helpers.css";
+
 .Collage {
-    padding: 10px;
-    padding-bottom: 80px;
     column-count: 2;
     column-gap: 10px;
-    margin: 0 auto;
-}
-
-@media all and (min-width: 414px) {
-    .Collage {
-        max-width: 414px;
-    }
 }
 
 @media all and (min-width: 768px) {
     .Collage {
-        padding: 20px;
-        padding-bottom: 90px;
         column-count: 3;
         column-gap: 20px;
-        max-width: 768px;
     }
 }
 
 @media all and (min-width: 992px) {
     .Collage {
         column-count: 3;
-        max-width: 992px;
     }
 }
 
 @media all and (min-width: 1200px) {
     .Collage {
         column-count: 4;
-        max-width: 1200px;
     }
 }

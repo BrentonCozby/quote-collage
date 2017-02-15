@@ -1,0 +1,21 @@
+.Header {
+    width: 100%;
+    background-color: #fff;
+    z-index: 100;
+    box-shadow: 0 1px 3px 0 #999;
+    padding: 10px;
+    text-align: center;
+}
+
+.title {
+    font-weight: normal;
+    margin: 0;
+    cursor: pointer;
+    display: inline-block;
+}
+
+@media all and (min-width: 768px) {
+    .Header {
+        padding: 15px;
+    }
+}

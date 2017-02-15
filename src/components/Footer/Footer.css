@@ -1,0 +1,17 @@
+.main-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    background-color: #444;
+}
+
+.main-footer p {
+    color: #eee;
+}
+
+.main-footer a {
+    color: #00D8FF;
+    text-decoration: none;
+}

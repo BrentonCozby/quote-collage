@@ -1,0 +1,15 @@
+.AddQuoteButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 1;
+    color: #666;
+    text-shadow: 0 1px 0px #444;
+}
+
+.AddQuoteButton:active {
+    transform: translateY(1px);
+    text-shadow: none;
+}

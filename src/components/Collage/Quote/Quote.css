@@ -1,0 +1,121 @@
+.Quote {
+    display: inline-block;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+    border-bottom: 2px solid #bbb;
+}
+
+.quote-text {
+    line-height: 1.5;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+}
+
+.quote-text:before,
+.quote-text:after {
+    content: '"';
+}
+
+.quote-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.quote-gear-btn {
+    cursor: pointer;
+    z-index: 2;
+    opacity: .4;
+}
+
+.quote-CRUD-buttons {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, .8);
+    opacity: 0;
+    z-index: -1;
+    transition: all .2s;
+}
+
+.quote-CRUD-buttons.animate {
+    left: 20px;
+    width: calc(100% - 20px);
+    opacity: 1;
+    z-index: 1;
+}
+
+.quote-delete-btn,
+.quote-edit-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.quote-delete-btn {
+    color: #b00;
+    margin-right: 5px;
+}
+
+.quote-edit-btn {
+    color: #079;
+}
+
+.quote-delete-btn.animate {
+    left: 20px;
+    font-size: 2em;
+    opacity: 1;
+}
+.quote-edit-btn.animate {
+    left: 60px;
+    font-size: 2em;
+    opacity: 1;
+}
+
+.quote-author {
+    text-align: right;
+    font-family: 'Mate SC', serif;
+}
+
+
+@media all and (min-width: 768px) {
+    .Quote {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .quote-text {
+        font-weight: 300;
+        font-size: 1.4rem;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .quote-text {
+        font-weight: 100;
+        font-size: 1.6rem;
+    }
+
+    .quote-bottom-row {
+        font-size: 1.2rem;
+    }
+
+    .quote-gear-btn:hover {
+        opacity: .8;
+    }
+
+    .quote-delete-btn.animate {
+        left: 20px;
+    }
+    .quote-edit-btn.animate {
+        left: 70px;
+    }
+}

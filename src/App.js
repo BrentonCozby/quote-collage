@@ -92,7 +92,6 @@ class App extends Component {
             userId: null,
             username: null
         })
-        this.props.push('/')
     }
 
     openQuoteEditor = (operation, quoteId) => {
@@ -143,6 +142,16 @@ class App extends Component {
 
         this.setState({ quotes, quoteBeingEdited: null })
     }
+
+    renderMenu = () => (
+        <Menu
+            isMenuOpen={this.state.isMenuOpen}
+            isLoggedIn={this.state.isLoggedIn}
+            goToLoginPage={this.goToLoginPage}
+            logout={this.logout}
+            toggleMenu={this.toggleMenu}
+        />
+    )
 
     renderLogin = () => {
         return (
@@ -197,24 +206,17 @@ class App extends Component {
                 {
                     (this.state.isEditingQuote ||
                      this.state.isAddingQuote ||
-                     this.state.isMenuOpen)
-                    ? <Overlay hideOverlayThings={this.hideOverlayThings} />
-                    : null
+                     this.state.isMenuOpen) &&
+                    <Overlay hideOverlayThings={this.hideOverlayThings} />
                 }
                 <MenuButton toggleMenu={this.toggleMenu} isMenuOpen={this.state.isMenuOpen} />
-                <Menu
-                    isMenuOpen={this.state.isMenuOpen}
-                    isLoggedIn={this.state.isLoggedIn}
-                    goToLoginPage={this.goToLoginPage}
-                    logout={this.logout}
-                    toggleMenu={this.toggleMenu}
-                />
+                {this.state.isMenuOpen && this.renderMenu()}
                 <Header
                     goToCollage={this.goToCollage}
                     openQuoteEditor={this.openQuoteEditor}
                 />
                 { (this.state.showLogin) ? this.renderLogin() : this.renderCollage() }
-                {(this.state.isEditingQuote || this.state.isAddingQuote) ? this.renderQuoteEditor() : null}
+                {(this.state.isEditingQuote || this.state.isAddingQuote) && this.renderQuoteEditor()}
                 <Footer />
             </div>
         )

@@ -1,0 +1,43 @@
+.fadeIn-enter {
+    opacity: 0.01;
+}
+
+.fadeIn-enter.fadeIn-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+
+.fadeIn-leave {
+    opacity: 1;
+}
+
+.fadeIn-leave.fadeIn-leave-active {
+    opacity: 0.01;
+    transition: opacity 200ms;
+}
+
+.menu-enter {
+    right: -210px;
+    top: -80px;
+    opacity: 0;
+}
+
+.menu-enter.menu-enter-active {
+    right: 0;
+    top: 0;
+    opacity: 1;
+    transition: all 200ms;
+}
+
+.menu-leave {
+    right: 0;
+    top: 0;
+    opacity: 1;
+}
+
+.menu-leave.menu-leave-active {
+    right: -210px;
+    top: -80px;
+    opacity: 0;
+    transition: all 200ms;
+}

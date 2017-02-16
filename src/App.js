@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import base from './base'
 import defaultQuotes from './default-quotes'
 
@@ -12,6 +13,7 @@ import QuoteEditor from './components/QuoteEditor/QuoteEditor.js'
 import Footer from './components/Footer/Footer.js'
 
 import './App.css'
+import './css/animations.css'
 
 class App extends Component {
     state = {
@@ -145,6 +147,7 @@ class App extends Component {
 
     renderMenu = () => (
         <Menu
+            key="menu"
             isMenuOpen={this.state.isMenuOpen}
             isLoggedIn={this.state.isLoggedIn}
             goToLoginPage={this.goToLoginPage}
@@ -156,6 +159,7 @@ class App extends Component {
     renderLogin = () => {
         return (
             <Login
+                key="login"
                 userId={this.state.userId}
                 login={this.login}
             />
@@ -166,6 +170,7 @@ class App extends Component {
         if(this.state.userId === 'user not found') return <p>User Not Found</p>
         return (
             <Collage
+                key="collage"
                 quotes={this.state.quotes}
                 deleteQuote={this.deleteQuote}
                 openQuoteEditor={this.openQuoteEditor}
@@ -177,6 +182,7 @@ class App extends Component {
     renderQuoteEditor = () => {
         return (
             <QuoteEditor
+                key="quote-editor"
                 isEditingQuote={this.state.isEditingQuote}
                 isAddingQuote={this.state.isAddingQuote}
                 quotes={this.state.quotes}
@@ -203,20 +209,36 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                {
-                    (this.state.isEditingQuote ||
-                     this.state.isAddingQuote ||
-                     this.state.isMenuOpen) &&
-                    <Overlay hideOverlayThings={this.hideOverlayThings} />
-                }
-                <MenuButton toggleMenu={this.toggleMenu} isMenuOpen={this.state.isMenuOpen} />
-                {this.state.isMenuOpen && this.renderMenu()}
                 <Header
                     goToCollage={this.goToCollage}
                     openQuoteEditor={this.openQuoteEditor}
                 />
-                { (this.state.showLogin) ? this.renderLogin() : this.renderCollage() }
-                {(this.state.isEditingQuote || this.state.isAddingQuote) && this.renderQuoteEditor()}
+
+                <ReactCSSTransitionGroup
+                    component="div"
+                    transitionName="fadeIn"
+                    transitionEnterTimeout={200}
+                    transitionLeaveTimeout={200}>
+                    {
+                        (this.state.isEditingQuote ||
+                         this.state.isAddingQuote ||
+                         this.state.isMenuOpen) &&
+                        <Overlay key="overlay" hideOverlayThings={this.hideOverlayThings} />
+                    }
+                    {(this.state.isEditingQuote || this.state.isAddingQuote) && this.renderQuoteEditor()}
+                    {(this.state.showLogin) ? this.renderLogin() : this.renderCollage()}
+                </ReactCSSTransitionGroup>
+
+                <MenuButton toggleMenu={this.toggleMenu} isMenuOpen={this.state.isMenuOpen} />
+
+                <ReactCSSTransitionGroup
+                    component="div"
+                    transitionName="menu"
+                    transitionEnterTimeout={200}
+                    transitionLeaveTimeout={200}>
+                    {this.state.isMenuOpen && this.renderMenu()}
+                </ReactCSSTransitionGroup>
+
                 <Footer />
             </div>
         )

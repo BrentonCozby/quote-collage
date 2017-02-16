@@ -8,16 +8,9 @@
     box-shadow: 0 0 15px 5px #000;
     width: 260px;
     height: 80vh;
-    right: -210px;
-    top: -80px;
-    opacity: 0;
     padding: 0 0 10px 0;
     margin: 0;
     z-index: 1000;
-    transition: all .3s;
-}
-
-.Menu.open {
     right: 0;
     top: 0;
     opacity: 1;

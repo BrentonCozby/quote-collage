@@ -12,9 +12,9 @@ const Collage = ({ quotes, deleteQuote, editQuote, openQuoteEditor, username }) 
         <div className="Collage">
             <ReactCSSTransitionGroup
                 component="div"
-                transitionName="fadeIn"
-                transitionEnterTimeout={200}
-                transitionLeaveTimeout={200}>
+                transitionName="shrinkFade"
+                transitionEnterTimeout={400}
+                transitionLeaveTimeout={400}>
                 {quotes.map(quote => (
                     <Quote
                         key={quote.id}

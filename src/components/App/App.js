@@ -147,7 +147,7 @@ class App extends Component {
 
                 <ReactCSSTransitionGroup
                     component="div"
-                    transitionName="fadeIn"
+                    transitionName="fade"
                     transitionEnterTimeout={200}
                     transitionLeaveTimeout={200}>
                     {

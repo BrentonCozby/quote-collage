@@ -75,7 +75,7 @@ class AppContainer extends Component {
             return Object.assign(quote)
         })
 
-        quotes.push(quote)
+        quotes.unshift(quote)
 
         this.setState({ quotes })
     }

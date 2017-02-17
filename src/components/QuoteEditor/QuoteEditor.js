@@ -4,6 +4,16 @@ import './QuoteEditor.css'
 
 class QuoteEditor extends Component {
 
+    static propTypes = {
+        isEditingQuote: React.PropTypes.bool.isRequired,
+        isAddingQuote: React.PropTypes.bool.isRequired,
+        quotes: React.PropTypes.array.isRequired,
+        quoteBeingEdited: React.PropTypes.object,
+        editQuote: React.PropTypes.func.isRequired,
+        addQuote: React.PropTypes.func.isRequired,
+        closeQuoteEditor: React.PropTypes.func.isRequired
+    }
+
     componentDidMount() {
         if(this.props.isEditingQuote) {
             this.quoteText.value = this.props.quoteBeingEdited.quoteText

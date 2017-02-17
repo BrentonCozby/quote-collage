@@ -13,8 +13,8 @@ const Collage = ({ quotes, deleteQuote, editQuote, openQuoteEditor, username }) 
             <ReactCSSTransitionGroup
                 component="div"
                 transitionName="fadeIn"
-                transitionEnterTimeout="200"
-                transitionLeaveTimeout="200">
+                transitionEnterTimeout={200}
+                transitionLeaveTimeout={200}>
                 {quotes.map(quote => (
                     <Quote
                         key={quote.id}
@@ -29,5 +29,12 @@ const Collage = ({ quotes, deleteQuote, editQuote, openQuoteEditor, username }) 
         </div>
     </div>
 )
+
+Collage.propTypes = {
+    quotes: React.PropTypes.array.isRequired,
+    deleteQuote: React.PropTypes.func.isRequired,
+    openQuoteEditor: React.PropTypes.func.isRequired,
+    username: React.PropTypes.string
+}
 
 export default Collage

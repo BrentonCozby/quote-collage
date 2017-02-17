@@ -19,18 +19,18 @@
     color: #fff;
     font-weight: bold;
     border: none;
-    border-bottom: 3px solid #555;
+    border-bottom: 3px solid #222;
     border-radius: 4px;
     top: 0;
 }
 
 .login-btn:active {
     border-color: rgba(0, 0, 0, 0);
-    top: 1px;
+    top: 2px;
 }
 
 .login-btn.github {
-    background-color: #333;
+    background-color: #444;
 }
 
 .login-btn.facebook {
@@ -39,4 +39,25 @@
 
 .login-btn.twitter {
     background-color: #33CCFF;
+}
+
+.go-home {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    padding: 10px;
+    font-size: .9rem;
+    text-transform: uppercase;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-family: 'Tinos', serif;
+    font-weight: bold;
+    border-bottom: 3px solid #666;
+    border-radius: 4px;
+    top: 0;
+}
+
+.go-home:active {
+    border-color: rgba(0, 0, 0, 0);
+    top: 2px;
 }

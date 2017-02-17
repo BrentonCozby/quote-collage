@@ -10,4 +10,9 @@ const MenuButton = ({ isMenuOpen, toggleMenu }) => (
     </div>
 )
 
+MenuButton.propTypes = {
+    isMenuOpen: React.PropTypes.bool.isRequired,
+    toggleMenu: React.PropTypes.func.isRequired
+}
+
 export default MenuButton

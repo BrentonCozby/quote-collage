@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Menu.css'
 
-const Menu = ({ isMenuOpen, goToLoginPage, logout, isLoggedIn, toggleMenu }) => (
+const Menu = ({ goToLoginPage, logout, isLoggedIn, toggleMenu }) => (
     <div className="Menu">
         <h3 className="menu-title">Menu</h3>
         <span onClick={toggleMenu} className="menu-item">Item 1</span>
@@ -19,5 +19,12 @@ const Menu = ({ isMenuOpen, goToLoginPage, logout, isLoggedIn, toggleMenu }) => 
         </span>
     </div>
 )
+
+Menu.propTypes = {
+    isLoggedIn: React.PropTypes.bool.isRequired,
+    goToLoginPage: React.PropTypes.func.isRequired,
+    logout: React.PropTypes.func.isRequired,
+    toggleMenu: React.PropTypes.func.isRequired
+}
 
 export default Menu

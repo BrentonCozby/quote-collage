@@ -11,4 +11,9 @@ const Header = ({ openQuoteEditor, goToCollage }) => (
     </div>
 )
 
+Header.propTypes = {
+    openQuoteEditor: React.PropTypes.func.isRequired,
+    goToCollage: React.PropTypes.func.isRequired
+}
+
 export default Header

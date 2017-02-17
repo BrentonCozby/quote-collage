@@ -7,6 +7,14 @@ class Quote extends Component {
         menuIsOpen: false
     }
 
+    static propTypes = {
+        quoteId: React.PropTypes.number.isRequired,
+        quoteText: React.PropTypes.string.isRequired,
+        author: React.PropTypes.string.isRequired,
+        deleteQuote: React.PropTypes.func.isRequired,
+        openQuoteEditor: React.PropTypes.func.isRequired
+    }
+
     showCRUDbuttons = () => {
         const menuIsOpen = this.state.menuIsOpen
         this.setState({ menuIsOpen: !menuIsOpen })

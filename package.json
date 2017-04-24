@@ -6,7 +6,7 @@
   "devDependencies": {
     "react-scripts": "0.8.5"
   },
-  "homepage": "https://brentoncozby.com/projects/quote-collage/",
+  "homepage": "https://brentoncozby.com/quote-collage/",
   "dependencies": {
     "body-parser": "^1.16.1",
     "express": "^4.14.1",

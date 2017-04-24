@@ -9,6 +9,7 @@
   "homepage": "https://brentoncozby.com/quote-collage/",
   "dependencies": {
     "body-parser": "^1.16.1",
+    "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "re-base": "^2.5.2",
     "react": "^15.4.2",

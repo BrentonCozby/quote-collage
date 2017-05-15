@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import escape from 'escape-html'
 
 import './QuoteEditor.css'
 
@@ -27,8 +28,8 @@ class QuoteEditor extends Component {
     saveNewQuote = (event) => {
         event.preventDefault();
         const quote = {
-            quoteText: this.quoteText.value,
-            author: this.author.value,
+            quoteText: escape(this.quoteText.value),
+            author: escape(this.author.value),
             id: this.quoteId || Date.now()
         }
 

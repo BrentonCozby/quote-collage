@@ -9,7 +9,7 @@ import './normalize.css'
 import './index.css'
 
 const Root = () => (
-    <Router basename='/quote-collage'>
+    <Router>
         <Switch>
             <Route exact path='/' component={AppContainer}/>
             <Route exact path='/:userId' component={AppContainer}/>

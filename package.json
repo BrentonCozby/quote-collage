@@ -7,10 +7,10 @@
     "react-scripts": "0.8.5"
   },
   "dependencies": {
-    "body-parser": "^1.16.1",
+    "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "escape-html": "^1.0.3",
-    "express": "^4.14.1",
+    "express": "^4.16.0",
     "re-base": "^2.5.2",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",

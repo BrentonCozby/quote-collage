@@ -12,9 +12,9 @@
     "escape-html": "^1.0.3",
     "express": "^4.14.1",
     "re-base": "^2.5.2",
-    "react": "^15.4.2",
-    "react-addons-css-transition-group": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16.5.0",
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-dom": "^16.5.0",
     "react-router-dom": "next",
     "rebase": "^0.3.0"
   },

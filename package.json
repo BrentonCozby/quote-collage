@@ -7,22 +7,25 @@
     "react-scripts": "0.8.5"
   },
   "dependencies": {
-    "body-parser": "^1.16.1",
+    "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "escape-html": "^1.0.3",
-    "express": "^4.14.1",
-    "re-base": "^2.5.2",
-    "react": "^15.4.2",
-    "react-addons-css-transition-group": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "express": "^4.16.0",
+    "re-base": "^3.0.0",
+    "react": "^16.5.0",
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-dom": "^16.5.0",
     "react-router-dom": "next",
-    "rebase": "^0.3.0"
+    "rebase": "^0.3.0",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "main": "server.js",
   "repository": {
@@ -33,5 +36,6 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/BrentonCozby/quote-collage/issues"
-  }
+  },
+  "snyk": true
 }

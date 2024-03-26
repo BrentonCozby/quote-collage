@@ -10,7 +10,7 @@
     "body-parser": "^1.16.1",
     "dotenv": "^4.0.0",
     "escape-html": "^1.0.3",
-    "express": "^4.14.1",
+    "express": "^4.19.2",
     "re-base": "^2.5.2",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
